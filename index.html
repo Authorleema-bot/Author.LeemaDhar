@@ -1,12 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Leema Dhar | Award-Winning Author & Academic</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Leema Dhar — Author | Poet | Academic</title>
+  <meta name="description" content="Dr. Leema Dhar — novelist, bilingual poet, motivational speaker and Assistant Professor of English. National bestsellers, research & speaking engagements." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#8B4513; --secondary:#D2691E; --accent:#CD853F; --light:#FAF0E6; --dark:#3E2723; --text:#333; --gold:#D4AF37;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Montserrat',sans-serif;background:var(--light);color:var(--text);line-height:1.6;}
+    a{color:inherit}
+    .container{width:92%;max-width:1200px;margin:0 auto;padding:0 12px;}
+    header{position:fixed;left:0;right:0;top:0;z-index:50;background:linear-gradient(135deg,var(--primary),var(--dark));color:#fff;padding:14px 0;box-shadow:0 6px 24px rgba(0,0,0,0.12)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand h1{font-family:'Crimson Text',serif;margin:0;font-size:1.1rem}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:#fff;text-decoration:none;font-weight:600;opacity:0.95}
+    .mobile-toggle{display:none;color:#fff;font-size:20px}
+    /* HERO */
+    .hero{min-height:420px;background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=2000&q=60') center/cover no-repeat;color:#fff;display:flex;align-items:center;justify-content:center;padding:90px 0 60px;margin-top:66px}
+    .hero-inner{text-align:center;max-width:980px;padding:0 18px}
+    .hero h2{font-family:'Crimson Text',serif;font-size:3.2rem;margin:0.2rem 0;letter-spacing:0.5px}
+    .hero p.lead{font-size:1.05rem;opacity:0.95;margin-bottom:18px}
+    .hero .cta{display:inline-block;background:var(--gold);color:var(--dark);padding:12px 26px;border-radius:30px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+    /* ABOUT */
+    section{padding:70px 0}
+    .about{display:grid;grid-template-columns:320px 1fr;gap:36px;align-items:center}
+    .portrait{width:320px;height:320px;border-radius:8px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.12);background:#fff;flex-shrink:0}
+    .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+    .about h3{font-family:'Crimson Text',serif;margin:0 0 12px;font-size:1.8rem}
+    .highlights{display:flex;gap:14px;margin-top:16px;flex-wrap:wrap}
+    .hl{background:#fff;padding:16px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.06);min-width:160px;text-align:center}
+    .hl h4{margin:6px 0 0;font-size:1rem;color:var(--primary)}
+    /* BOOKS */
+    .books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px}
+    .book{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,0.08);transition:transform .28s ease;display:flex;flex-direction:column}
+    .book:hover{transform:translateY(-8px)}
+    .book-cover{height:340px;background:#f6f6f6;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .book-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .book-body{padding:18px;flex:1;display:flex;flex-direction:column;gap:10px}
+    .book-body h4{margin:0;color:var(--dark);font-size:1.05rem}
+    .book-body p{margin:0;color:#666;font-size:0.95rem}
+    .book-actions{margin-top:auto;display:flex;gap:10px;align-items:center}
+    .buy{background:var(--primary);color:#fff;padding:9px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+    .bestseller{background:var(--gold);color:var(--dark);padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.85rem;margin-left:auto}
+    /* RESEARCH / ACADEMIC */
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+    .card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.06)}
+    /* CONTACT & FOOTER */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
+    .form .form-row{margin-bottom:12px}
+    input,textarea{width:100%;padding:12px;border:1px solid #e6e6e6;border-radius:8px;font-size:0.95rem}
+    textarea{min-height:120px;resize:vertical}
+    footer{background:var(--dark);color:#fff;padding:40px 0}
+    .footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.06);color:#fff;margin-right:8px;text-decoration:none}
+    /* Responsive */
+    @media(max-width:1000px){.about{grid-template-columns:1fr;}.portrait{width:240px;height:240px;margin:0 auto}.contact-grid{grid-template-columns:1fr}.hero h2{font-size:2.4rem}}
+    @media(max-width:640px){nav ul{display:none}.mobile-toggle{display:block}.hero{padding:90px 0 60px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <i class="fas fa-book-open" style="font-size:22px;color:var(--gold)"></i>
+        <h1>Dr. Leema Dhar</h1>
+      </div>
+      <nav>
+        <span class="mobile-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')"><i class="fas fa-bars"></i></span>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#academic">Academic</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" aria-label="Hero — Dr Leema Dhar">
+    <div class="container hero-inner">
+      <h2 class="shining-name" style="text-shadow:0 0 14px rgba(212,175,55,0.6)">Dr. Leema Dhar</h2>
+      <p class="lead">Novelist • Bilingual Poet • Motivational Speaker • Assistant Professor of English</p>
+      <p class="lead" style="opacity:0.9">Award-winning author of national bestsellers and active researcher in feminist & postcolonial literature.</p>
+      <a class="cta" href="#books">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px">
+            <h3>About Dr. Leema Dhar</h3>
+            <p style="color:#555;font-size:1rem">
+              Dr. Leema Dhar is a PhD scholar, novelist, bilingual poet and a passionate educator. With seven published books (four national bestsellers), multiple awards and a growing body of scholarly work, she combines academic rigor with creative imagination.
+            </p>
+            <div class="highlights" aria-hidden="false">
+              <div class="hl"><strong>PhD</strong><h4>Central University of Allahabad</h4></div>
+              <div class="hl"><strong>7 Books</strong><h4>4 National Bestsellers</h4></div>
+              <div class="hl"><strong>Awards</strong><h4>Nari Samman, Women Achiever & more</h4></div>
+            </div>
+            <p style="margin-top:14px"><a href="#contact" class="cta" style="background:var(--primary);color:#fff">Get in touch</a></p>
+          </div>
+
+          <div class="portrait" aria-hidden="false">
+            <!-- Author photo (raw GitHub URL) -->
+            <img alt="Dr Leema Dhar portrait"
+              src="https://raw.githubusercontent.com/Authorleema-bot/Author.LeemaDhar/main/Dr_Leema_Dhar_photo.jpg.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books" class="books" aria-label="Books">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+        <div>
+          <h2>Published Works</h2>
+          <p style="color:#666">Selected national bestsellers and poetry collections. Click a cover to open the purchase page on Amazon.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:28px" class="books-grid">
+
+        <!-- Book 1 -->
+        <article class="book" aria-labelledby="b1">
+          <div class="book-cover">
+            <!-- REPLACE the 'data-cover' with a direct image URL (Amazon raw image OR GitHub raw image) for high-quality cover.
+                 Example: data-cover="https://raw.githubusercontent.com/your/repo/main/cover1.jpg"
+                 If you don't replace it, a placeholder will show instead. -->
+            <img alt="The Committed Sin — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b1">The Committed Sin</h4>
+            <p>A romantic thriller — Leadstart Publishing (2016).</p>
+            <div class="book-actions">
+              <a class="buy" href="https://www.amazon.in/Committed-Sin-Leema-Dhar/dp/9384027537" target="_blank" rel="noopener">Buy on Amazon</a>
+              <span class="bestseller">Bestseller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 2 -->
+        <article class="book" aria-labelledby="b2">
+          <div class="book-cover">
+            <img alt="You Touched My Heart — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b2">You Touched My Heart</h4>
+            <p>Romantic novel with supernatural elements — National Bestseller (2013).</p>
+            <div class="book-actions">
+              <a class="buy" href="https://www.amazon.in/You-Touched-My-Heart-Nightmare/dp/9380914733" target="_blank" rel="noopener">Buy on Amazon</a>
+              <span class="bestseller">Bestseller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 3 -->
+        <article class="book" aria-labelledby="b3">
+          <div class="book-cover">
+            <img alt="The Girl Who Kissed the Snake — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b3">The Girl Who Kissed the Snake</h4>
+            <p>National Bestseller — General Press (2013).</p>
+            <div class="book-actions">
+              <a class="buy" href="https://www.amazon.in/Girl-Who-Kissed-Snake/dp/9380914598" target="_blank" rel="noopener">Buy on Amazon</a>
+              <span class="bestseller">Bestseller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 4 -->
+        <article class="book" aria-labelledby="b4">
+          <div class="book-cover">
+            <img alt="Mom and I Love a Terrorist — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b4">Mom and I Love a Terrorist</h4>
+            <p>National Bestseller — General Press (2012).</p>
+            <div class="book-actions">
+              <a class="buy" href="https://www.amazon.in/Mom-Love-Terrorist-Happen-Dark/dp/9380914288" target="_blank" rel="noopener">Buy on Amazon</a>
+              <span class="bestseller">Bestseller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 5 -->
+        <article class="book" aria-labelledby="b5">
+          <div class="book-cover">
+            <img alt="Till We Meet Again — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b5">Till We Meet Again</h4>
+            <p>National Bestseller — Diamond Books (2012).</p>
+            <div class="book-actions">
+              <a class="buy" href="https://www.amazon.in/Till-Meet-Again-Leema-Dhar-ebook/dp/B00DF5I95U" target="_blank" rel="noopener">Buy on Amazon</a>
+              <span class="bestseller">Bestseller</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 6 -->
+        <article class="book" aria-labelledby="b6">
+          <div class="book-cover">
+            <img alt="For the Hundred Tomorrows — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b6">For the Hundred Tomorrows</h4>
+            <p>English poetry collection (2010).</p>
+            <div class="book-actions">
+              <a class="buy" href="#" target="_blank" rel="noopener">Purchase</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 7 -->
+        <article class="book" aria-labelledby="b7">
+          <div class="book-cover">
+            <img alt="Kuch Lafz Naqab Mein — cover"
+                 src="https://via.placeholder.com/400x560?text=Cover+Image"
+                 data-cover="" />
+          </div>
+          <div class="book-body">
+            <h4 id="b7">Kuch Lafz Naqab Mein</h4>
+            <p>Hindi poetry collection (2007).</p>
+            <div class="book-actions">
+              <a class="buy" href="#" target="_blank" rel="noopener">Purchase</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <h2>Research & Publications</h2>
+      <p style="color:#666">Selected peer-reviewed work and conference presentations in feminist and postcolonial studies.</p>
+      <div style="margin-top:20px" class="grid-3">
+        <div class="card">
+          <h4>Journal Publications</h4>
+          <ul>
+            <li><strong>Modern Wastelanders and the Living Dead</strong> — Gorteria Journal</li>
+            <li><strong>Beyond the Ordinary</strong> — Pramana Research Journal</li>
+            <li><strong>The Intangibles</strong> — IJCRT</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Book Chapters</h4>
+          <ul>
+            <li>A Comparative Study of Indian Feminism and Western Feminism — LANGLIT</li>
+            <li>Tracing the Sea with No Land — The Quintessence of Humanistic-Existentialism</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Conference Presentations</h4>
+          <ul>
+            <li>Deen Dayal Upadhyay University — Wide Sargasso Sea (2018)</li>
+            <li>Vasanta College — Feminism and Beyond (2019)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC -->
+  <section id="academic">
+    <div class="container">
+      <h2>Academic & Teaching</h2>
+      <p style="color:#666">Teaching, curriculum development and mentorship across engineering and liberal arts programs.</p>
+
+      <div style="margin-top:20px" class="grid-3">
+        <div class="card">
+          <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+          <p><strong>PhD in English</strong> — Central University of Allahabad</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-chalkboard-teacher"></i> Teaching</h4>
+          <p>Assistant Professor, K.C. College of Engineering & Management Studies & Research; previous roles in Noida, Kolkata and Bankura.</p>
+        </div>
+        <div class="card">
+          <h4><i class="fas fa-book-reader"></i> Philosophy</h4>
+          <p>Interactive, comparative, and research-led pedagogy to encourage critical thinking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <div class="container">
+      <h2>Awards & Recognition</h2>
+      <div style="margin-top:18px" class="grid-3">
+        <div class="card"><h4>Nari Samman Award</h4><p>U.P. State Government (2016)</p></div>
+        <div class="card"><h4>Women Achiever Award</h4><p>Amar Ujala-Rupayan (2013)</p></div>
+        <div class="card"><h4>Youth Icon</h4><p>YOUTH ACTION Magazine (2015)</p></div>
+      </div>
+      <div style="margin-top:22px" class="card">
+        <h4>Media Coverage</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px">
+          <div style="background:#fff;padding:10px 16px;border-radius:8px;color:#333">Times of India</div>
+          <div style="background:#fff;padding:10px 16px;border-radius:8px;color:#333">Hindustan Times</div>
+          <div style="background:#fff;padding:10px 16px;border-radius:8px;color:#333">ABP News</div>
+          <div style="background:#fff;padding:10px 16px;border-radius:8px;color:#333">Dainik Jagran</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div style="margin-top:18px" class="contact-grid">
+        <div>
+          <div class="card">
+            <h4>Contact Information</h4>
+            <p><strong>Address:</strong> Flat No. B-102, Jupiter, Lodha Paradise, Majiwada, Thane, Maharashtra 400601</p>
+            <p><strong>Permanent:</strong> A-201, Brij Hari Apartments, Ashok Nagar, Prayagraj-211001(UP)</p>
+            <p><strong>Email:</strong> drleemadhar@gmail.com</p>
+            <p><strong>Phone:</strong> +91 9452751567</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dr-leema-dhar-354bba5a" target="_blank" rel="noopener">Profile</a></p>
+            <div style="margin-top:12px" class="socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card form">
+            <h4>Send a message</h4>
+            <form onsubmit="alert('Thank you — message sent (demo).');this.reset();return false;">
+              <div class="form-row"><input required placeholder="Your name" /></div>
+              <div class="form-row"><input type="email" required placeholder="Your email" /></div>
+              <div class="form-row"><input placeholder="Subject" /></div>
+              <div class="form-row"><textarea placeholder="Message"></textarea></div>
+              <div class="form-row"><button class="cta" style="background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:8px">Send</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <h4>Dr. Leema Dhar</h4>
+        <p style="color:#ddd">Author, poet, researcher and educator. © <span id="year"></span></p>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul style="list-style:none;padding:0;color:#ddd">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#research">Research</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form onsubmit="alert('Subscribed (demo)');return false;">
+          <input placeholder="Your email" type="email" style="padding:10px;border-radius:6px;border:1px solid #444;width:100%;margin-bottom:8px" />
+          <button class="cta" style="background:var(--gold);border:none;padding:8px 12px;border-radius:8px">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div style="text-align:center;color:#bbb;padding:18px 0;background:rgba(0,0,0,0.06)">Designed with ♥ — Dr. Leema Dhar</div>
+  </footer>
+
+  <script>
+    // small helpers
+
+    // Replace book covers if you later fill data-cover attributes with direct image URLs.
+    document.querySelectorAll('.book-cover img').forEach(img=>{
+      const cover = img.getAttribute('data-cover');
+      if(cover && cover.length>5){
+        img.src = cover;
+      }
+    });
+
+    // Smooth scrolling + nav active
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t) window.scrollTo({top:t.offsetTop-70,behavior:'smooth'});
+      });
+    });
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
         :root {
             --primary: #8B4513;
             --secondary: #D2691E;
